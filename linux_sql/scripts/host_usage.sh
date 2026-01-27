@@ -26,7 +26,7 @@ timestamp="$(vmstat -t | tail -1 | awk -v d="$(date -u +"%Y-%m-%d")" '{print d "
 host_id="(SELECT id FROM host_info WHERE hostname='$hostname')"
 
 insert_stmt="INSERT INTO host_usage (timestamp, host_id, memory_free, cpu_idle, cpu_kernel, disk_io, disk_available)
-VALUES('$timestamp', (SELECT id FROM host_info WHERE hostname='$hostname') , $memory_free, $cpu_idle, $cpu_kernel, $disk_io, $disk_available);"
+VALUES('$timestamp', $host_id , $memory_free, $cpu_idle, $cpu_kernel, $disk_io, $disk_available);"
 
 
 export PGPASSWORD=$psql_password
