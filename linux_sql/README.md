@@ -23,7 +23,7 @@ bash scripts/host_usage.sh localhost 5432 host_agent postgres password
 # Set up crontab to collect usage every minute
 crontab -e
 * * * * * bash /home/rocky/dev/jarvis_data_eng_SanyaBansal/linux_sql/scripts/host_usage.sh localhost 5432 host_agent postgres password > /tmp/host_usage.log 2>&1
-
+```
 # Implemenation 
 The monitoring system was built using Bash scripts, PostgreSQL, Docker, and cron. Two scripts were created: host_info.sh, which collects hardware details such as CPU type, number of CPUs, total memory, and hostname and runs only once to register the server, and host_usage.sh, which collects real-time usage data such as free memory, CPU usage, CPU kernel time, disk I/O, and available disk space. The host_usage.sh script is scheduled with cron to run every minute, ensuring continuous data collection. All this data is saved in a PostgreSQL database. The PostgreSQL database runs in Docker for easy setup, and all data is stored in two tables: host_info for hardware details and host_usage for usage metrics. Testing was performed on a single machine to verify that the scripts correctly captured the data. Even on one machine, the system simulates a real server cluster and can be scaled to multiple hosts if needed. 
 ## Architecture
@@ -61,6 +61,7 @@ crontab -e
 # - Average memory usage
 # - Identify hosts with high CPU or memory usage over time.
 # - Determine which hosts are underutilized and can be decommissioned.
+```
 ## Database Modeling
  
 ### host_info
@@ -108,7 +109,7 @@ psql -h localhost -U postgres -d host_agent -c "SELECT * FROM public.host_info;"
 # Check host_usage data
 psql -h localhost -U postgres -d host_agent -c "SELECT * FROM public.host_usage;"
 **Results:** All scripts executed successfully. Tables are created and populated correctly, and queries return expected results. Additionally, the `host_info` table is automatically updated every minute using a cron job, ensuring that new host data is continuously added without manual intervention.
-
+```
 # Deployment 
 First, the PostgreSQL database is deployed using Docker. A container is created that runs PostgreSQL. 
 Next, the Bash scripts are placed on each server (or node). These scripts act as agents.
