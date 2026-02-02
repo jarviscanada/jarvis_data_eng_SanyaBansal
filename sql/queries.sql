@@ -1,0 +1,381 @@
+```sql
+
+--Question 1: Inserting data into the facilities table.
+
+INSERT INTO cd.facilities (
+  facid, name, membercost, guestcost, 
+  initialoutlay, monthlymaintenance
+) 
+VALUES 
+  (9, 'Spa', 20, 30, 100000, 800);
+
+
+--Question 2 : Inserting calculated data into the facilities table.
+
+INSERT INTO cd.facilities (
+  facid, name, membercost, guestcost, 
+  initialoutlay, monthlymaintenance
+) 
+VALUES 
+  (
+    (
+      SELECT 
+        MAX(facid) + 1 
+      FROM 
+        cd.facilities
+    ), 
+    'Spa', 
+    20, 
+    30, 
+    100000, 
+    800
+  );
+
+
+--Question 3: Updating some existing data in the facilities table.
+
+UPDATE 
+  cd.facilities 
+SET 
+  initialoutlay = 10000 
+WHERE 
+  name = 'Tennis Court 2';
+
+
+--Question 4: Alter the price of the second tennis court so that it costs 10% more than the first one.
+
+UPDATE 
+  cd.facilities 
+SET 
+  membercost = (
+    SELECT 
+      membercost * 1.1 
+    FROM 
+      cd.facilities 
+    WHERE 
+      name = 'Tennis Court 1'
+  ), 
+  guestcost = (
+    SELECT 
+      guestcost * 1.1 
+    FROM 
+      cd.facilities 
+    WHERE 
+      name = 'Tennis Court 1'
+  ) 
+WHERE 
+  name = 'Tennis Court 2';
+
+
+--Question 5: Delete all bookings from the cd.bookings table.
+
+DELETE 
+FROM cd.bookings;
+
+--Question 6: Remove member 37, who has never made a booking, from the database.
+
+DELETE 
+FROM cd.members
+WHERE memid = 37;
+
+--Question 7: Produce a list of facilities that charge a fee to members, and that fee is less than 1/50th of the monthly maintenance cost? Return the facid, facility name, member cost, and monthly maintenance of the facilities in question.
+
+SELECT 
+  facid, 
+  name, 
+  membercost, 
+  monthlymaintenance 
+FROM 
+  cd.facilities 
+WHERE 
+  membercost > 0 
+  AND membercost < (1 / 50.0)* monthlymaintenance;
+
+
+--Question 8: Produce a list of all facilities with the word 'Tennis' in their name?
+
+SELECT *
+FROM cd.facilities
+WHERE name like '%Tennis%';
+
+--Question 9: Retrieve the details of facilities with ID 1 and 5? 
+
+SELECT *
+FROM cd.facilities
+WHERE facid in (1,5);
+
+--Question 10: Produce a list of members who joined after the start of September 2012? Return the memid, surname, firstname, and joindate of the members in question.
+
+SELECT 
+  memid, 
+  surname, 
+  firstname, 
+  joindate 
+FROM 
+  cd.members 
+WHERE 
+  joindate >= '2012-09-01';
+
+
+--Question 11: A combined list of all surnames and all facility names.
+
+SELECT 
+  surname 
+FROM 
+  cd.members 
+UNION 
+  (
+    SELECT 
+      name 
+    FROM 
+      cd.facilities
+  );
+
+
+--Question 12: Produce a list of the start times for bookings by members named 'David Farrell'?
+
+SELECT 
+  starttime 
+FROM 
+  cd.bookings 
+  INNER JOIN cd.members ON cd.bookings.memid = cd.members.memid 
+WHERE 
+  cd.members.surname = 'Farrell' 
+  AND cd.members.firstname = 'David';
+
+
+--Question 13: Produce a list of the start times for bookings for tennis courts, for the date '2012-09-21'? Return a list of start time and facility name pairings, ordered by the time.
+
+SELECT 
+  cd.bookings.starttime AS start, 
+  cd.facilities.name 
+FROM 
+  cd.bookings 
+  INNER JOIN cd.facilities ON cd.bookings.facid = cd.facilities.facid 
+WHERE 
+  cd.bookings.starttime >= '2012-09-21%' 
+  and cd.bookings.starttime < '2012-09-22%' 
+  and cd.facilities.name in (
+    'Tennis Court 1', 'Tennis Court 2'
+  );
+
+
+--Question 14: Produce a list of all members, along with their recommender
+
+SELECT 
+  m.firstname as memfname, 
+  m.surname as memsname, 
+  r.firstname as recfname, 
+  r.surname as recsname 
+FROM 
+  cd.members m 
+  left outer join cd.members r on r.memid = m.recommendedby 
+order by 
+  memsname, 
+  memfname;
+
+
+--Question 15: Produce a list of all members who have recommended another member
+
+SELECT 
+  DISTINCT r.firstname, 
+  r.surname 
+FROM 
+  cd.members m 
+  inner join cd.members r on r.memid = m.recommendedby 
+order by 
+  surname, 
+  firstname;
+
+
+--Question 16: Produce a list of all members, along with their recommender, using no joins.
+
+SELECT 
+  DISTINCT m.firstname || ' ' || m.surname as member, 
+  (
+    SELECT 
+      r.firstname || ' ' || r.surname as recommender 
+    FROM 
+      cd.members r 
+    WHERE 
+      r.memid = m.recommendedby
+  ) 
+FROM 
+  cd.members m 
+ORDER BY 
+  member;
+
+--Question 17: Format the names of members
+
+SELECT surname || ', ' || firstname as name 
+FROM cd.members;
+
+--Question 18: Find telephone numbers with parentheses
+
+SELECT memid, telephone
+FROM cd.members
+WHERE telephone like '%(%';
+
+--Question 19: Count the number of members whose surname starts with each letter of the alphabet
+
+SELECT 
+  substr (cd.members.surname, 1, 1) as letter, 
+  count(*) as count 
+FROM 
+  cd.members 
+GROUP BY 
+  letter 
+ORDER BY 
+  letter;
+ 
+
+--Question 20: Produce a count of the number of recommendations each member has made. Order by member ID.
+
+SELECT 
+  recommendedby, 
+  count(*) 
+FROM 
+  cd.members 
+WHERE 
+  recommendedby IS NOT NULL 
+GROUP BY 
+  recommendedby 
+ORDER BY 
+  recommendedby;
+
+--Question 21: List the total slots booked per facility
+
+SELECT 
+  facid, 
+  sum(slots) as "Total Slots" 
+FROM 
+  cd.bookings 
+GROUP BY 
+  facid 
+ORDER BY 
+  facid;
+
+
+--Question 22: List the total slots booked per facility in a given month
+
+SELECT 
+  facid, 
+  sum(slots) as "Total Slots" 
+FROM 
+  cd.bookings 
+WHERE 
+  starttime >= '2012-09-01' 
+  AND starttime < '2012-10-01' 
+GROUP BY 
+  facid 
+ORDER BY 
+  "Total Slots";
+
+
+--Question 23: List the total slots booked per facility per month
+
+SELECT 
+  facid, 
+  extract(
+    month 
+    from 
+      starttime
+  ) as month, 
+  sum(slots) as "Total Slots" 
+FROM 
+  cd.bookings 
+WHERE 
+  extract(
+    year 
+    from 
+      starttime
+  ) = 2012 
+GROUP BY 
+  facid, 
+  month 
+ORDER BY 
+  facid, 
+  month;
+
+
+--Question 24: Find the total number of members (including guests) who have made at least one booking.
+
+SELECT 
+  COUNT (DISTINCT memid) 
+FROM 
+  cd.bookings 
+WHERE 
+  slots > 0;
+
+
+--Question 25: List each member's first booking after September 1st 2012.
+
+SELECT 
+  m.surname, 
+  m.firstname, 
+  b.memid, 
+  min(b.starttime) as starttime 
+FROM 
+  cd.bookings b 
+  INNER JOIN cd.members m ON b.memid = m.memid 
+WHERE 
+  b.starttime >= '2012-09-01' 
+GROUP BY 
+  m.surname, 
+  m.firstname, 
+  b.memid 
+ORDER BY 
+  memid;
+
+
+--Question 26: Produce a list of member names, with each row containing the total member count
+
+SELECT 
+  count(*) over(), 
+  firstname, 
+  surname 
+FROM 
+  cd.members 
+ORDER BY 
+  joindate;
+
+
+--Question 27:  Produce a numbered list of members
+
+SELECT 
+  count(*) over(
+    order by 
+      joindate
+  ) as row_number, 
+  firstname, 
+  surname 
+FROM 
+  cd.members 
+ORDER BY 
+  joindate;
+
+
+--Question 28:  Output the facility id that has the highest number of slots booked, again
+
+SELECT 
+  facid, 
+  total 
+FROM 
+  (
+    SELECT 
+      facid, 
+      sum(slots) total, 
+      rank() over (
+        order by 
+          sum(slots) desc
+      ) rank 
+    FROM 
+      cd.bookings 
+    GROUP BY 
+      facid
+  ) AS ranked 
+WHERE 
+  rank = 1;
+
+```
+
