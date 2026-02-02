@@ -6,7 +6,7 @@ This project is a hands-on SQL and RDBMS learning exercise focused on database d
 
 ###### Table Setup (DDL)
 
-##### Creating Members Table
+###### Creating Members Table
 
 ```sql
 CREATE TABLE cd.members (
@@ -22,7 +22,7 @@ CREATE TABLE cd.members (
   CONSTRAINT fk_members_recommendedby FOREIGN KEY (recommendedby) REFERENCES cd.members(memid)
 );
 ```
-##### Creating Bookings Table
+###### Creating Bookings Table
 ```sql
 CREATE TABLE cd.bookings (
   bookid integer NOT NULL, 
@@ -35,7 +35,7 @@ CREATE TABLE cd.bookings (
   CONSTRAINT fk_bookings_memid FOREIGN KEY (memid) REFERENCES cd.members(memid)
 );
 ```
-##### Creating Facilities Table
+###### Creating Facilities Table
 ```sql
 CREATE TABLE cd.facilities (
   facid integer NOT NULL, 
