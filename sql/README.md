@@ -1,9 +1,12 @@
 
 # Introduction
+This project is a hands-on SQL and RDBMS learning exercise focused on database design and query writing rather than application development. Based on a provided ERD, the relational database schema was implemented by writing SQL DDL statements to create the members, bookings, and facilities tables with appropriate primary and foreign key relationships. SQL queries were written to extract meaningful insights from the data, including joins, aggregations, filtering, and window functions. The project is intended for students and early-career data professionals preparing for data analyst or data engineer roles and demonstrates a solid understanding of relational data modeling, SQL querying, and structured problem solving. Version control using Git and GitHub was applied to organize and track changes to the project files.
 
 # SQL Queries
 
 ###### Table Setup (DDL)
+
+##### Creating Members Table
 
 ```sql
 CREATE TABLE cd.members (
@@ -18,6 +21,9 @@ CREATE TABLE cd.members (
   CONSTRAINT members_pk PRIMARY KEY (memid), 
   CONSTRAINT fk_members_recommendedby FOREIGN KEY (recommendedby) REFERENCES cd.members(memid)
 );
+```
+##### Creating Bookings Table
+```sql
 CREATE TABLE cd.bookings (
   bookid integer NOT NULL, 
   facid integer NOT NULL, 
@@ -28,6 +34,9 @@ CREATE TABLE cd.bookings (
   CONSTRAINT fk_bookings_facid FOREIGN KEY (facid) REFERENCES cd.facilities(facid), 
   CONSTRAINT fk_bookings_memid FOREIGN KEY (memid) REFERENCES cd.members(memid)
 );
+```
+##### Creating Facilities Table
+```sql
 CREATE TABLE cd.facilities (
   facid integer NOT NULL, 
   name VARCHAR(100) NOT NULL, 
@@ -305,7 +314,8 @@ GROUP BY
   month 
 ORDER BY 
   facid, 
-  month;```
+  month;
+```
 ###### Question 24: Find the total number of members (including guests) who have made at least one booking.
 ```sql
 SELECT 
