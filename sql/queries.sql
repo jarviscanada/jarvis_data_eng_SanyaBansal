@@ -1,4 +1,4 @@
-```sql
+
 
 --Question 1: Inserting data into the facilities table.
 
@@ -377,5 +377,5 @@ FROM
 WHERE 
   rank = 1;
 
-```
+
 
