@@ -1,0 +1,104 @@
+{
+  "education": [
+    {
+      "awards_achievements": null,
+      "degree": "Post Graduate Diploma",
+      "department": "Information Technology",
+      "duration": "2023-2024",
+      "school_name": "Seneca College"
+    },
+    {
+      "awards_achievements": null,
+      "degree": "Bachelor of Technology",
+      "department": "Electrical and Computer Engineering",
+      "duration": "2016-2020",
+      "school_name": "Punjab Engineering College"
+    }
+  ],
+  "github_repo_root_url": "https://github.com/jarviscanada/jarvis_data_eng_demo",
+  "highlighted_projects": [
+    {
+      "description": "Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.",
+      "git_url": "https://github.com/jarviscanada/jarvis_profile_builder",
+      "name": "Web app for resturant"
+    },
+    {
+      "description": "Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.",
+      "git_url": null,
+      "name": "Machine Learning"
+    }
+  ],
+  "jarvis_projects": [
+    {
+      "description": "Built a simple Linux server monitoring system that collects host hardware details and tracks CPU and memory usage over time. Implemented Bash scripts where one script runs once to store static host information and another runs periodically to capture live usage metrics. Stored all data in a PostgreSQL database running inside Docker, enabling clean setup and easy management.Demonstrated practical integration of Linux, Bash scripting, Docker, Git, and PostgreSQL to deliver a basic monitoring solution.\"",
+      "git_url": "/linux_sql",
+      "name": "Cluster Monitor"
+    },
+    {
+      "description": "Designed and implemented a relational database using SQL and RDBMS principles based on a provided ERD. Created normalized tables for members, bookings, and facilities using SQL DDL with appropriate primary and foreign key constraints. Developed SQL queries to extract meaningful insights using joins, aggregations, filters, and window functions. Applied Git and GitHub for version control and change tracking.",
+      "git_url": "/RDBMS_and_SQL",
+      "name": "RDBMS and SQL"
+    }
+  ],
+  "name": "Sanya Bansal",
+  "others": [
+    {
+      "bullets": [
+        "Udacity Machine Learning (2019)"
+      ],
+      "title": "Certificates"
+    },
+    {
+      "bullets": [
+        "Winner"
+      ],
+      "title": "Awards"
+    },
+    {
+      "bullets": [
+        "Basketball player",
+        "Competitive gaming",
+        "Volunteer, ABC Food bank: Ut enim ad minim veniam"
+      ],
+      "title": "Activities/Hobbies"
+    }
+  ],
+  "professional_experience": [
+    {
+      "company": "Jarvis",
+      "description": "Donec mattis sed justo et sagittis. Vestibulum lacinia nulla ipsum. Curabitur imperdiet nibh vitae leo lacinia laoreet. Nullam accumsan, lectus ut maximus ultricies, augue justo egestas mi, vel bibendum felis.",
+      "duration": "2020-present",
+      "title": "Software Developer"
+    },
+    {
+      "company": "XYZ Company",
+      "description": "Donec mattis sed justo et sagittis. Vestibulum lacinia nulla ipsum. Curabitur imperdiet nibh vitae leo lacinia laoreet. Nullam accumsan, lectus ut maximus ultricies, augue justo egestas mi, vel bibendum felis.",
+      "duration": "2019",
+      "title": "Tutor"
+    }
+  ],
+  "skills": {
+    "competent": [
+      "Donec",
+      "fermentum",
+      "Donec",
+      "fermentum",
+      "Donec"
+    ],
+    "familiar": [
+      "Donec",
+      "fermentum",
+      "fermentum",
+      "fermentum",
+      "fermentum"
+    ],
+    "proficient": [
+      "Java",
+      "Linux/Bash",
+      "RDBMS/SQL",
+      "Agile/Scrum",
+      "Git"
+    ]
+  },
+  "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis a orci ac malesuada. Vivamus ligula elit, viverra eu ante porttitor, blandit convallis augue. Aliquam justo justo, mollis at lacus eu, rutrum finibus est. Vestibulum venenatis purus id accumsan pretium. In efficitur magna nec enim laoreet tincidunt. Ut libero metus, scelerisque nec eros vitae, sagittis pellentesque enim. Donec dictum felis volutpat, vehicula magna eu, imperdiet elit. Phasellus ut velit a massa efficitur faucibus. Sed volutpat, lacus sed sagittis luctus, elit."
+}
