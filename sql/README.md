@@ -89,7 +89,22 @@ WHERE name = 'Tennis Court 2';
 UPDATE 
   cd.facilities 
 SET 
-  initialoutlay = 10000 
+  membercost = (
+    SELECT 
+      membercost * 1.1 
+    FROM 
+      cd.facilities 
+    WHERE 
+      name = 'Tennis Court 1'
+  ), 
+  guestcost = (
+    SELECT 
+      guestcost * 1.1 
+    FROM 
+      cd.facilities 
+    WHERE 
+      name = 'Tennis Court 1'
+  ) 
 WHERE 
   name = 'Tennis Court 2';
 ```
@@ -190,8 +205,8 @@ SELECT
   r.surname as recsname 
 FROM 
   cd.members m 
-  left outer join cd.members r on r.memid = m.recommendedby 
-order by 
+  LEFT OUTER JOIN cd.members r on r.memid = m.recommendedby 
+ORDER BY 
   memsname, 
   memfname;
 ```
@@ -202,8 +217,8 @@ SELECT
   r.surname 
 FROM 
   cd.members m 
-  inner join cd.members r on r.memid = m.recommendedby 
-order by 
+  INNER JOIN cd.members r on r.memid = m.recommendedby 
+ORDER BY
   surname, 
   firstname;
 ```
