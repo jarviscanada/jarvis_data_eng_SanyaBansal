@@ -10,7 +10,7 @@ This project is a hands-on SQL and RDBMS learning exercise focused on database d
 
 ```sql
 CREATE TABLE cd.members (
-  memid INT PRIMARY KEY, 
+  memid INT, 
   surname VARCHAR(200), 
   firstname VARCHAR(200), 
   address VARCHAR(300), 
@@ -25,11 +25,11 @@ CREATE TABLE cd.members (
 ###### Creating Bookings Table
 ```sql
 CREATE TABLE cd.bookings (
-  bookid integer NOT NULL, 
-  facid integer NOT NULL, 
-  memid integer NOT NULL, 
+  bookid INT NOT NULL, 
+  facid INT NOT NULL, 
+  memid INT NOT NULL, 
   starttime timestamp NOT NULL, 
-  slots integer NOT NULL, 
+  slots INT NOT NULL, 
   CONSTRAINT bookings_pk PRIMARY KEY (bookid), 
   CONSTRAINT fk_bookings_facid FOREIGN KEY (facid) REFERENCES cd.facilities(facid), 
   CONSTRAINT fk_bookings_memid FOREIGN KEY (memid) REFERENCES cd.members(memid)
@@ -38,7 +38,7 @@ CREATE TABLE cd.bookings (
 ###### Creating Facilities Table
 ```sql
 CREATE TABLE cd.facilities (
-  facid integer NOT NULL, 
+  facid INT NOT NULL, 
   name VARCHAR(100) NOT NULL, 
   membercost numeric NOT NULL, 
   guestcost numeric NOT NULL, 
