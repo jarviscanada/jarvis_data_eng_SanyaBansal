@@ -22,8 +22,8 @@ SELECT MAX(invoice_date), MIN(invoice_date) FROM retail;
 SELECT COUNT (DISTINCT stock_code) FROM retail;
 
 --Q6: Calculate average invoice amount excluding invoices with a negative amount (e.g. canceled orders have negative amount)
-oan invoice consists of one or more items where each item is a row in the df
-ohint: you need to use GROUP BY and HAVING
+--an invoice consists of one or more items where each item is a row in the df
+--hint: you need to use GROUP BY and HAVING
 
 SELECT AVG(invoice_total) AS avg FROM (
     SELECT
