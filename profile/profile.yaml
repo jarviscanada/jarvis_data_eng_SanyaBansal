@@ -1,0 +1,99 @@
+# Preferred name (Characters only)
+name: "Sanya Bansal"
+# Your GitHub repo root URL
+github_repo_root_url: https://github.com/jarviscanada/jarvis_data_eng_demo
+
+# Introduce yourself, your academic and professional background.
+# What excites you about the software industry and your passion. At least 80 words
+summary: Business and data analytics professional with a Post Graduate Diploma in Business Information Technology from Seneca College. Currently working at Jarvis Consulting Group, contributing to technical and analytics-focused projects using SQL and Python. Previously worked as a Technical Sales Analyst at Larsen & Toubro, supporting data analysis and business reporting. Passionate about Business Systems Analyst roles as they combine problem-solving, technology, and business understanding to improve systems and enable better, data-driven decision-making.
+# Group your skills by level.
+# Your skills can be anything software related (e.g. language, frameworks, methodologies, software, etc.).
+skills:
+  # At least 5 skills
+  proficient:
+    - RDBMS/SQL
+    - Python (Pandas, Numpy)
+    - Agile/Scrum
+    - Excel
+    - Git
+  # At least 5 skills
+  competent:
+    - PowerBI
+    - Data Visualization
+    - Requirements Documentation (BRDs, SRDs)
+    - Linux/Bash
+    - Data Modeling
+  # At least 5 skills
+  familiar:
+    - Google Cloud Platform
+    - Docker
+    - Matplotlib
+    - Power Query
+    - Pyspark
+
+# List of Jarvis projects
+jarvis_projects:
+  - name: "Cluster Monitor"
+    git_url: "/linux_sql"
+    # The project description allows hiring managers to understand your project and technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: Built a simple Linux server monitoring system that collects host hardware details and tracks CPU and memory usage over time. Implemented Bash scripts where one script runs once to store static host information and another runs periodically to capture live usage metrics. Stored all data in a PostgreSQL database running inside Docker, enabling clean setup and easy management.Demonstrated practical integration of Linux, Bash scripting, Docker, Git, and PostgreSQL to deliver a basic monitoring solution."
+  - name: "RDBMS and SQL"
+    git_url: "/RDBMS_and_SQL"
+    description: Designed and implemented a relational database using SQL and RDBMS principles based on a provided ERD. Created normalized tables for members, bookings, and facilities using SQL DDL with appropriate primary and foreign key constraints. Developed SQL queries to extract meaningful insights using joins, aggregations, filters, and window functions. Applied Git and GitHub for version control and change tracking.
+  - name: "Python Data Analytics"
+    git_url: "/python_data_analytics"
+    description: Built a customer analytics PoC leveraging Python, Pandas, and PostgreSQL to perform RFM segmentation, revenue trend analysis, and cancellation pattern detection for targeted marketing optimization.
+  - name: "BSA Fundamentals"
+    git_url: None
+    description: Authored a Business Requirements Document (BRD) for a Linux Cluster Monitoring project and conducted stakeholder elicitation sessions to gather requirements, translating them into a detailed Software Requirements Document (SRD) for a stock trading application.
+
+# List of personal or academic projects
+# Feel free to add more projects
+highlighted_projects:
+    #project name
+  - name: "Data Professional Survey"
+    #URL is optional
+    git_url: "https://github.com/bansalsanya/PowerBI-DataProfessionalSurvey"
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: Designed and developed an interactive Power BI dashboard to analyze data from a Data Professional Survey. Transformed and cleaned the dataset using Power Query, and created visualizations highlighting key insights such as average salary by job title and professional satisfaction metrics to support data-driven insights into industry trends.
+  
+
+#List of professional experience
+#The job description allows hiring managers to understand your job and the technologies you used(e.g. programming languages, libraries, algorithms, hardware, tools, etc.).
+#The description must be more than 25 words. If your experience is not software related, please focus on soft skills and achievements (e.g. team collaboration, problem-solving, improvements, communication).
+professional_experience:
+  #Write your Jarvis role as a professional experience rather than training.
+  - title: "Business Systems Analyst"
+    company: "Jarvis"
+    duration: "January, 2026 - Present"
+    # The project description must start with an action verb (https://bit.ly/3guO98u)
+    description: "Analyzed business and system requirements for technical and data-focused projects in an Agile environment. Conducted stakeholder elicitation sessions and documented requirements through artifacts such as Business Requirements Documents (BRD) and Software Requirements Documents (SRD). Also worked with tools including SQL, Python, Linux, and Git while contributing to data analytics and system monitoring projects."
+  - title: "Technical Sales Analyst"
+    company: "Larsen & Tourbo"
+    duration: "2019-2020"
+    description: " Supported sales operations by analyzing technical specifications, client requirements, and market data related to the companys products. Conducted retailer surveys to gather insights on product performance and market positioning. Cleaned and analyzed the collected data using Excel, created pivot tables to identify trends, and presented findings to stakeholders to support improvements in marketing strategies and business decision-making."
+
+#List of edcuation
+education: 
+  - school_name: "Seneca College"
+    duration: "2023-2024"
+    degree: "Post Graduate Diploma"
+    department: "Information Technology"
+    awards_achievements: 
+  - school_name: "Punjab Engineering College"
+    duration: "2016-2020"
+    degree: "Bachelor of Technology"
+    department: "Electrical Engineering" 
+    awards_achievements: 
+
+#Optional section
+others:
+    #category
+  - title: "Certificates"
+    #list of items
+    bullets:
+      - "Certificates: Microsoft PowerBI Data Analyst Associate(PL-300)"
+  - title: "Languages"
+    bullets:
+      - "Languages: English, French (Intermediate - A2)"
