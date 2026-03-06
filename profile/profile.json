@@ -10,7 +10,7 @@
     {
       "awards_achievements": null,
       "degree": "Bachelor of Technology",
-      "department": "Electrical and Computer Engineering",
+      "department": "Electrical Engineering",
       "duration": "2016-2020",
       "school_name": "Punjab Engineering College"
     }
@@ -49,15 +49,13 @@
   "others": [
     {
       "bullets": [
-        "Microsoft PowerBI Data Analyst Associate"
+        "Certificates: Microsoft PowerBI Data Analyst Associate(PL-300)"
       ],
       "title": "Certificates"
     },
     {
       "bullets": [
-        "English",
-        "Hindi",
-        "French (Intermediate - A2)"
+        "Languages: English, French (Intermediate - A2)"
       ],
       "title": "Languages"
     }

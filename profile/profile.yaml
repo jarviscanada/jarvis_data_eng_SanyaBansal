@@ -84,7 +84,7 @@ education:
   - school_name: "Punjab Engineering College"
     duration: "2016-2020"
     degree: "Bachelor of Technology"
-    department: "Electrical and Computer Engineering" 
+    department: "Electrical Engineering" 
     awards_achievements: 
 
 #Optional section
@@ -93,10 +93,7 @@ others:
   - title: "Certificates"
     #list of items
     bullets:
-      - "Microsoft PowerBI Data Analyst Associate"
+      - "Certificates: Microsoft PowerBI Data Analyst Associate(PL-300)"
   - title: "Languages"
     bullets:
-      - "English"
-      - "Hindi"
-      - "French (Intermediate - A2)"
-  
+      - "Languages: English, French (Intermediate - A2)"
