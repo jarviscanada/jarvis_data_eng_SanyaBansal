@@ -18,14 +18,9 @@
   "github_repo_root_url": "https://github.com/jarviscanada/jarvis_data_eng_demo",
   "highlighted_projects": [
     {
-      "description": "Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.",
-      "git_url": "https://github.com/jarviscanada/jarvis_profile_builder",
-      "name": "Web app for resturant"
-    },
-    {
-      "description": "Suspendisse a tincidunt odio. Suspendisse posuere luctus aliquet. Quisque magna tellus, tempor vitae arcu sed, volutpat scelerisque lacus. Aliquam varius pulvinar dapibus. Ut a tincidunt sem. Aenean sollicitudin fringilla erat ut imperdiet. Phasellus fermentum, enim vitae laoreet elementum, eros nisl hendrerit lorem.",
-      "git_url": null,
-      "name": "Machine Learning"
+      "description": "Designed and developed an interactive Power BI dashboard to analyze data from a Data Professional Survey. Transformed and cleaned the dataset using Power Query, and created visualizations highlighting key insights such as average salary by job title and professional satisfaction metrics to support data-driven insights into industry trends.",
+      "git_url": "https://github.com/bansalsanya/PowerBI-DataProfessionalSurvey",
+      "name": "Data Professional Survey"
     }
   ],
   "jarvis_projects": [
@@ -38,67 +33,77 @@
       "description": "Designed and implemented a relational database using SQL and RDBMS principles based on a provided ERD. Created normalized tables for members, bookings, and facilities using SQL DDL with appropriate primary and foreign key constraints. Developed SQL queries to extract meaningful insights using joins, aggregations, filters, and window functions. Applied Git and GitHub for version control and change tracking.",
       "git_url": "/RDBMS_and_SQL",
       "name": "RDBMS and SQL"
+    },
+    {
+      "description": "Built a customer analytics PoC leveraging Python, Pandas, and PostgreSQL to perform RFM segmentation, revenue trend analysis, and cancellation pattern detection for targeted marketing optimization.",
+      "git_url": "/python_data_analytics",
+      "name": "Python Data Analytics"
+    },
+    {
+      "description": "Authored a Business Requirements Document (BRD) for a Linux Cluster Monitoring project and conducted stakeholder elicitation sessions to gather requirements, translating them into a detailed Software Requirements Document (SRD) for a stock trading application.",
+      "git_url": "None",
+      "name": "BSA Fundamentals"
     }
   ],
   "name": "Sanya Bansal",
   "others": [
     {
       "bullets": [
-        "Udacity Machine Learning (2019)"
+        "Microsoft PowerBI Data Analyst Associate"
       ],
       "title": "Certificates"
     },
     {
       "bullets": [
-        "Winner"
+        "English",
+        "Hindi",
+        "French (Intermediate - A2)"
       ],
-      "title": "Awards"
+      "title": "Languages"
     },
     {
       "bullets": [
-        "Basketball player",
-        "Competitive gaming",
-        "Volunteer, ABC Food bank: Ut enim ad minim veniam"
+        "None"
       ],
-      "title": "Activities/Hobbies"
+      "title": "None"
     }
   ],
   "professional_experience": [
     {
       "company": "Jarvis",
-      "description": "Donec mattis sed justo et sagittis. Vestibulum lacinia nulla ipsum. Curabitur imperdiet nibh vitae leo lacinia laoreet. Nullam accumsan, lectus ut maximus ultricies, augue justo egestas mi, vel bibendum felis.",
-      "duration": "2020-present",
-      "title": "Software Developer"
+      "description": "Analyzed business and system requirements for technical and data-focused projects in an Agile environment. Conducted stakeholder elicitation sessions and documented requirements through artifacts such as Business Requirements Documents (BRD) and Software Requirements Documents (SRD). Also worked with tools including SQL, Python, Linux, and Git while contributing to data analytics and system monitoring projects.",
+      "duration": "January, 2026 - Present",
+      "title": "Business Systems Analyst"
     },
     {
-      "company": "XYZ Company",
-      "description": "Donec mattis sed justo et sagittis. Vestibulum lacinia nulla ipsum. Curabitur imperdiet nibh vitae leo lacinia laoreet. Nullam accumsan, lectus ut maximus ultricies, augue justo egestas mi, vel bibendum felis.",
-      "duration": "2019",
-      "title": "Tutor"
+      "company": "Larsen \u0026 Tourbo",
+      "description": "Supported sales operations by analyzing technical specifications, client requirements, and market data related to the companys products. Conducted retailer surveys to gather insights on product performance and market positioning. Cleaned and analyzed the collected data using Excel, created pivot tables to identify trends, and presented findings to stakeholders to support improvements in marketing strategies and business decision-making.",
+      "duration": "2019-2020",
+      "title": "Technical Sales Analyst"
     }
   ],
   "skills": {
     "competent": [
-      "Donec",
-      "fermentum",
-      "Donec",
-      "fermentum",
-      "Donec"
+      "PowerBI",
+      "Data Visualization",
+      "Requirements Documentation (BRDs, SRDs)",
+      "Linux/Bash",
+      "Data Modeling"
     ],
     "familiar": [
-      "Donec",
-      "fermentum",
-      "fermentum",
-      "fermentum",
-      "fermentum"
+      "Google Cloud Platform",
+      "Docker",
+      "Matplotlib",
+      "Power Query",
+      "Pyspark"
     ],
     "proficient": [
-      "Java",
-      "Linux/Bash",
       "RDBMS/SQL",
+      "Python (Pandas, Numpy)",
       "Agile/Scrum",
+      "Excel",
       "Git"
     ]
   },
-  "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed venenatis a orci ac malesuada. Vivamus ligula elit, viverra eu ante porttitor, blandit convallis augue. Aliquam justo justo, mollis at lacus eu, rutrum finibus est. Vestibulum venenatis purus id accumsan pretium. In efficitur magna nec enim laoreet tincidunt. Ut libero metus, scelerisque nec eros vitae, sagittis pellentesque enim. Donec dictum felis volutpat, vehicula magna eu, imperdiet elit. Phasellus ut velit a massa efficitur faucibus. Sed volutpat, lacus sed sagittis luctus, elit."
+  "summary": "Business and data analytics professional with a Post Graduate Diploma in Business Information Technology from Seneca College. Currently working at Jarvis Consulting Group, contributing to technical and analytics-focused projects using SQL and Python. Previously worked as a Technical Sales Analyst at Larsen \u0026 Toubro, supporting data analysis and business reporting. Passionate about Business Systems Analyst roles as they combine problem-solving, technology, and business understanding to improve systems and enable better, data-driven decision-making."
 }
